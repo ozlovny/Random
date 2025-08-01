@@ -39,19 +39,13 @@
   <button onclick="startRandom()">Старт</button>
 
   <script>
-    async function startRandom() {
-      try {
-        const res = await fetch('http://:212.80.7.13:28931/random');
-        const data = await res.json();
-        const video = document.getElementById('clip');
-        const source = document.getElementById('videoSource');
-        source.src = data.url;
-        video.load();
-        video.play();
-      } catch (err) {
-        console.error('Ошибка загрузки видео:', err);
-      }
-    }
+    fetch('http://212.80.7.13:28931/random')
+  .then(response => response.json())
+  .then(data => {
+    const num = data.number;
+    const video = document.querySelector(`#number_${num}`);
+    video.play();
+  });
   </script>
 </body>
 </html>
