@@ -40,12 +40,17 @@
 
   <script>
   async function startRandom() {
-    const response = await fetch('http://212.80.7.13:28931/random');
-    const data = await response.json();
-
+      <script>
+    fetch('http://212.80.7.13:28931/random')
+  .then(response => response.json())
+  .then(data => {
     const num = data.number;
-    const video = document.getElementById('clip');
-    const source = document.getElementById('videoSource');
+    const video = document.querySelector(`#number_${num}`);
+    video.play();
+  });
+ 
+
+    
 
     // Подставляем локальный путь к видеофайлу
     source.src = `./videos/video${num}.webm`;
