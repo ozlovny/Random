@@ -18,7 +18,7 @@
         const data = await response.json();
         const number = data.number;
 
-        video.src = `animations/number_${number}.webm`;
+        video.src = `number_${number}.webm`;
         video.play();
       } catch (error) {
         console.error('Ошибка при получении числа:', error);
