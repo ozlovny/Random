@@ -14,7 +14,7 @@
 
     startBtn.addEventListener('click', async () => {
       try {
-        const response = await fetch('http://212.80.7.13:28931/api/random');
+        const response = await fetch('https://212.80.7.13:28931/api/random');
         const data = await response.json();
         const number = data.number;
 
